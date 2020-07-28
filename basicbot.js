@@ -92,7 +92,7 @@ return sock.msg(data);
     var loadChat = function (cb) {
         if (!cb) cb = function () {
         };
-        $.get("https://github.com/wingnaut/metalPants/master/lang/langIndex.json", function (json) {
+        $.get("https://ghcdn.rawgit.org/wingnaut/metalPants/master/lang/langIndex.json", function (json) {
             var link = basicBot.chatLink;
             if (json !== null && typeof json !== "undefined") {
                 langIndex = json;
@@ -233,9 +233,9 @@ return str;
         status: false,
         name: "basicBot",
         loggedInID: null,
-        scriptLink: "https://github.com/wingnaut/metalPants/master/basicbot.js",
+        scriptLink: "https://ghcdn.rawgit.org/wingnaut/metalPants/master/basicbot.js",
         cmdLink: "http://git.io/vLJEB",
-        chatLink: "https://github.com/wingnaut/metalPants/master/lang/en.json",
+        chatLink: "https://ghcdn.rawgit.org/wingnaut/metalPants/master/lang/en.json",
         chat: null,
         loadChat: loadChat,
         retrieveSettings: retrieveSettings,
@@ -243,7 +243,7 @@ return str;
         settings: {
             botName: "basicBot",
             language: "english",
-            chatLink: "https://github.com/wingnaut/metalPants/master/lang/en.json",
+            chatLink: "https://ghcdn.rawgit.org/wingnaut/metalPants/master/lang/en.json",
             startupCap: 1, // 1-200
             startupVolume: 0, // 0-100
             startupEmoji: false, // true or false
@@ -2288,7 +2288,7 @@ return API.moderateForceSkip();
                                     )
                             }
                             var api_key = "dc6zaTOxFJmzC"; // public beta key
-                            var rating = "pg-13"; // PG 13 gifs
+                            var rating = "r"; // R gifs
                             var tag = msg.substr(cmd.length + 1);
                             var fixedtag = tag.replace(/ /g,"+");
                             var commatag = tag.replace(/ /g,", ");
@@ -2317,7 +2317,7 @@ return API.moderateForceSkip();
                                     )
                             }
                             var api_key = "dc6zaTOxFJmzC"; // public beta key
-                            var rating = "pg-13"; // PG 13 gifs
+                            var rating = "r"; // R gifs
                             get_random_id(api_key, function(id) {
                                 if (typeof id !== 'undefined') {
                                     API.sendChat(subChat(basicBot.chat.validgifrandom, {name: chat.un, id: id}));
@@ -2477,7 +2477,7 @@ return API.moderateForceSkip();
                         if (msg.length <= cmd.length + 1) return API.sendChat(subChat(basicBot.chat.currentlang, {language: basicBot.settings.language}));
                         var argument = msg.substring(cmd.length + 1);
 
-                        $.get("https://github.com/wingnaut/metalPants/master/lang/langIndex.json", function (json) {
+                        $.get("https://ghcdn.rawgit.org/wingnaut/metalPants/master/lang/langIndex.json", function (json) {
                             var langIndex = json;
                             var link = langIndex[argument.toLowerCase()];
                             if (typeof link === "undefined") {

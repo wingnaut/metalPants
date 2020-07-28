@@ -92,7 +92,7 @@ return sock.msg(data);
     var loadChat = function (cb) {
         if (!cb) cb = function () {
         };
-        $.get("https://cdn.jsdelivr.net/gh/wingnaut/metalPants/master/lang/langIndex.json", function (json) {
+        $.get("https://github.com/wingnaut/metalPants/master/lang/langIndex.json", function (json) {
             var link = basicBot.chatLink;
             if (json !== null && typeof json !== "undefined") {
                 langIndex = json;
@@ -233,9 +233,9 @@ return str;
         status: false,
         name: "basicBot",
         loggedInID: null,
-        scriptLink: "https://cdn.jsdelivr.net/gh/wingnaut/metalPants/master/basicbot.js",
+        scriptLink: "https://github.com/wingnaut/metalPants/master/basicbot.js",
         cmdLink: "http://git.io/vLJEB",
-        chatLink: "https://cdn.jsdelivr.net/gh/wingnaut/metalPants/master/lang/en.json",
+        chatLink: "https://github.com/wingnaut/metalPants/master/lang/en.json",
         chat: null,
         loadChat: loadChat,
         retrieveSettings: retrieveSettings,
@@ -243,7 +243,7 @@ return str;
         settings: {
             botName: "basicBot",
             language: "english",
-            chatLink: "https://cdn.jsdelivr.net/gh/wingnaut/metalPants/master/lang/en.json",
+            chatLink: "https://github.com/wingnaut/metalPants/master/lang/en.json",
             startupCap: 1, // 1-200
             startupVolume: 0, // 0-100
             startupEmoji: false, // true or false
@@ -2477,7 +2477,7 @@ return API.moderateForceSkip();
                         if (msg.length <= cmd.length + 1) return API.sendChat(subChat(basicBot.chat.currentlang, {language: basicBot.settings.language}));
                         var argument = msg.substring(cmd.length + 1);
 
-                        $.get("https://cdn.jsdelivr.net/gh/wingnaut/metalPants/master/lang/langIndex.json", function (json) {
+                        $.get("https://github.com/wingnaut/metalPants/master/lang/langIndex.json", function (json) {
                             var langIndex = json;
                             var link = langIndex[argument.toLowerCase()];
                             if (typeof link === "undefined") {
